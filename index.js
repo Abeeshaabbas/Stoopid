@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 app.get('/stoopid', (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"))
 })
-app.listen(5500, () => {
+app.listen(process.env.PORT, () => {
     console.log("ho");
 })
 const io = require("socket.io")(3000);
