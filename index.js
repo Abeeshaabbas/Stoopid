@@ -15,7 +15,7 @@ app.get('/stoopid', (req, res) => {
 app.listen(process.env.PORT, "0.0.0.0", () => {
     console.log("ho");
 })
-const io = require("socket.io")(3000);
+const io = require("socket.io")(8000);
 const users = {};
 
 io.on('connection', socket => {
