@@ -20,11 +20,12 @@ form.addEventListener('submit', (e) => {
     socket.emit('send', msg);
     messageInpt.value = ""
 })
+let names = "";
 let n = prompt("Enter name: ");
 if(n.toString().toLowerCase().includes("ashal") || n.toString().toLowerCase().includes("waliya")) {
     let code = prompt("Enter code");
 if(code==null) window.close();
-let names = "";
+
 if(parseInt(code) === 73 || code.toLowerCase() === "dumbo") {
     names = "Waliya";
 } else if(parseInt(code) === 143 || code.toLowerCase() === "wfa") {
