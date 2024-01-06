@@ -28,7 +28,9 @@ if(parseInt(code) === 73 || code.toLowerCase() === "dumbo") {
     names = "Waliya";
 } else if(parseInt(code) === 143 || code.toLowerCase() === "wfa") {
     names = "Ashal";
-} else alert("Wrong code inputted! Access denied.")
+} else {
+    names = "Unauthorised user";
+}
 
 socket.emit('new-user-joined', names);
 
