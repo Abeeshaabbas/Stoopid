@@ -32,13 +32,15 @@ let n = prompt("Enter name: ");
 if (n.toString().toLowerCase().includes("ashal") || n.toString().toLowerCase().includes("waliya")) {
     let code = prompt("Enter code");
     if (code == null) window.close();
-
-    if ((code.toLowerCase() === process.env.SECRET1) || (code.toLowerCase() === process.env.SECRET2)) {
-        names = (code.toLowerCase() === process.env.SECRET1) ? "Waliya" : "Ashal";
+    
+    fetch('/config'/).then(response => response.json()).then(data => {
+        if ((code.toLowerCase() === data.secret1) || (code.toLowerCase() === data.secret2)) {
+        names = (code.toLowerCase() === data.secret1) ? "Waliya" : "Ashal";
         socket.emit('new-user-joined', { name: names, room: "sudoclass" });
     } else {
         names = "Unauthorised user";
     }
+    });
 } else {
     names = n;
     socket.emit('new-user-joined', { name: names, room: "unknown" });
