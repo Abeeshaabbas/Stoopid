@@ -13,7 +13,13 @@ console.log(__dirname);
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
-
+app.get('/config', (req, res) => {
+    const PORT = process.env.PORT;
+    const SECRET1 = process.env.SECRET1;
+    const SECRET2 = process.env.SECRET2;
+    // Send environment variables as JSON
+    res.json({ port: PORT, secret1: SECRET1, secret2:SECRET2 });
+});
 app.get('/stoopid', (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
