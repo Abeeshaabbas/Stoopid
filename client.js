@@ -33,7 +33,7 @@ if (n.toString().toLowerCase().includes("ashal") || n.toString().toLowerCase().i
     let code = prompt("Enter code");
     if (code == null) window.close();
     
-    fetch('/config'/).then(response => response.json()).then(data => {
+    fetch('/config').then(response => response.json()).then(data => {
         if ((code.toLowerCase() === data.secret1) || (code.toLowerCase() === data.secret2)) {
         names = (code.toLowerCase() === data.secret1) ? "Waliya" : "Ashal";
         socket.emit('new-user-joined', { name: names, room: "sudoclass" });
