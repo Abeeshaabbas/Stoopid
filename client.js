@@ -37,6 +37,7 @@ if (n.toString().toLowerCase().includes("ashal") || n.toString().toLowerCase().i
         if ((code.toLowerCase() === data.secret1) || (code.toLowerCase() === data.secret2)) {
         names = (code.toLowerCase() === data.secret1) ? "Waliya" : "Ashal";
         socket.emit('new-user-joined', { name: names, room: "sudoclass" });
+        });
     } else {
         names = "Unauthorised user";
     }
