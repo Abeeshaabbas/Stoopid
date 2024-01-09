@@ -4,7 +4,8 @@ const form = document.getElementById('send-container');
 const messageInpt = document.getElementById('messageInp');
 const messageContainer = document.querySelector(".container");
 function scroll() {
-  messageContainer.scrollTop = messageContainter.scrollHeight;
+  let chatCont = document.getElementById("cont");
+  chatCont.scrollTop = chatCont.scrollHeight;
 }
 
 const append = (message, position) => {
