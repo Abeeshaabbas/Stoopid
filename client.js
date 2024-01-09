@@ -19,7 +19,7 @@ function scroll() {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const msg = messageInpt.value;
-    append(`You: ${msg}`, 'right');
+    append(`${msg}`, 'right');
     scroll();
     socket.emit('send', msg);
     messageInpt.value = ""
