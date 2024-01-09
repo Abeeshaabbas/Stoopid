@@ -3,7 +3,7 @@ const socket = io('https://stoopid-website.up.railway.app', { transports : ['web
 const form = document.getElementById('send-container');
 const messageInpt = document.getElementById('messageInp');
 const messageContainer = document.querySelector(".container");
-function scroll {
+function scroll() {
   messageContainer.scrollTop = messageContainter.scrollHeight;
 }
 
