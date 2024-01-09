@@ -24,8 +24,7 @@ h1{
     margin:auto;
     height: 60vh;
     padding:33px;
-    overflow-x:hiden;
-    overflow-y:auto;
+    overflow:hidden;
     margin-bottom: 23px;;
 }
 .message{
