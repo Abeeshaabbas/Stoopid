@@ -26,10 +26,7 @@ server.listen(process.env.PORT, "0.0.0.0", () => {
 const users = {};
 
 io.on('connection', socket => {
-    socket.on('joinRoom', (roomName) => {
-    socket.join(roomName);
-    console.log(`User joined room: ${roomName}`);
-  });
+
 
     socket.on('new-user-joined', name => {
         console.log("User Joined:", name);
