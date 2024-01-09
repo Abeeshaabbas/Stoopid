@@ -46,7 +46,7 @@ h1{
     font-family: sans-serif;
     background-color: darkblue;
     width: 24%;
-    min-width: 150px; /* Set your desired minimum width */
+    min-width: 230px; /* Set your desired minimum width */
     max-width: 300px; /* Set your desired maximum width */
     padding: 12px;
     margin: 7px 2px;
