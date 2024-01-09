@@ -36,15 +36,15 @@ io.on('connection', socket => {
         console.log("User Joined:", name);
         users[socket.id] = name;
         socket.join(room);
-        socket.to(room).broadcast.emit('user-joined', name);
+        io.to(room).broadcast.emit('user-joined', name);
     });
 
     socket.on('send', message => {
-        socket.to(users[socket.id]).broadcast.emit('receive', { message: message, name: users[socket.id] });
+        io.to(users[socket.id]).broadcast.emit('receive', { message: message, name: users[socket.id] });
     });
 
     socket.on('disconnect', message => {
-        socket.to(users[socket.id]).broadcast.emit('leave', users[socket.id]);
+        io.to(users[socket.id]).broadcast.emit('leave', users[socket.id]);
         delete users[socket.id];
     });
 });
