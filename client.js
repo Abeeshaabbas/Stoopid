@@ -3,7 +3,9 @@ const socket = io('https://stoopid-website.up.railway.app', { transports : ['web
 const form = document.getElementById('send-container');
 const messageInpt = document.getElementById('messageInp');
 const messageContainer = document.querySelector(".container");
-
+function scroll {
+  messageContainer.scrollTop = messageContainter.scrollHeight;
+}
 
 const append = (message, position) => {
     const messageElement = document.createElement('div');
@@ -17,6 +19,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const msg = messageInpt.value;
     append(`You: ${msg}`, 'right');
+    scroll();
     socket.emit('send', msg);
     messageInpt.value = ""
 })
@@ -44,6 +47,7 @@ socket.on('user-joined', name =>{
 
 socket.on('receive', (data) => {
     append(`${data.name}: ${data.message}`, 'left');
+    scroll();
 })
 
 socket.on('leave', name => {
