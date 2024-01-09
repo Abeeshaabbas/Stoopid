@@ -58,6 +58,7 @@ h1{
 .left{
     float:left;
     clear:both;
+    background-color: chartreuse;
 }
 .right{
     clear:both;
