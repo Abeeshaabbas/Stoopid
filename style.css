@@ -62,7 +62,8 @@ h1{
 .right{
     clear:both;
     float:right;
-    background-color: chartreuse;
+    background-color: antiquewhite;
+    color: darkslategray;
 }
 #send-container{
     display:block;
